@@ -20,7 +20,7 @@ function send_my_image()
     cameraOutput.classList.add("taken");
     var image_taken = cameraOutput.src = cameraSensor.toDataURL("image/png");
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://ec2-3-19-241-100.us-east-2.compute.amazonaws.com:62116/send_image", true);
+    xhr.open("POST", "http://ec2-3-19-241-100.us-east-2.compute.amazonaws.com:62116/send_image", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
         "image": image_taken
@@ -52,7 +52,7 @@ cameraTrigger.onclick = function() {
     cameraOutput.classList.add("taken");
     var image_taken = cameraOutput.src = cameraSensor.toDataURL("image/png");
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://ec2-3-19-241-100.us-east-2.compute.amazonaws.com:62116/send_image", true);
+    xhr.open("POST", "http://ec2-3-19-241-100.us-east-2.compute.amazonaws.com:62116/send_image", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
         "image": image_taken
